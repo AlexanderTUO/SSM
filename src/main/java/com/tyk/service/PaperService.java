@@ -16,4 +16,6 @@ public interface PaperService {
     List<Paper> queryAllPaper();
 
     String getMessage(String username);
+
+    Paper testTransactional(Long id);
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 @Service
@@ -18,6 +17,9 @@ public class PaperServiceImpl implements PaperService {
 
     @Autowired
     private LogService logService;
+
+    @Autowired
+    private PaperService paperService;
 
     @Override
     public int addPaper(Paper paper) {
@@ -35,14 +37,30 @@ public class PaperServiceImpl implements PaperService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
+//    @Transactional(propagation = Propagation.REQUIRED)
     public Paper queryById(Long id) {
+//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+//        SysLog log = new SysLog();
+//        log.setId(IDGenerator.nextId());
+//        log.setMethod("queryById");
+//        logService.addLog(log);
+////        int d = 1/0;
+//        return paperDao.queryById(id);
+        return paperService.testTransactional(id);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Paper testTransactional(Long id) {
         SysLog log = new SysLog();
         log.setId(IDGenerator.nextId());
         log.setMethod("queryById");
         logService.addLog(log);
+        int d = 1/0;
         return paperDao.queryById(id);
     }
+
+
+
 
     @Override
     public List<Paper> queryAllPaper() {
