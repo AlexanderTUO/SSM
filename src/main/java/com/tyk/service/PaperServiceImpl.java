@@ -1,5 +1,6 @@
 package com.tyk.service;
 
+import com.tyk.annotation.CustomTransactional;
 import com.tyk.dao.PaperDao;
 import com.tyk.pojo.Paper;
 import com.tyk.pojo.SysLog;
@@ -37,19 +38,21 @@ public class PaperServiceImpl implements PaperService {
     }
 
     @Override
-//    @Transactional(propagation = Propagation.REQUIRED)
-    public Paper queryById(Long id) {
-//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
-//        SysLog log = new SysLog();
-//        log.setId(IDGenerator.nextId());
-//        log.setMethod("queryById");
-//        logService.addLog(log);
-////        int d = 1/0;
-//        return paperDao.queryById(id);
-        return paperService.testTransactional(id);
-    }
-
+//    @CustomTransactional(id = 1,propagation = "REQUIRED")
     @Transactional(propagation = Propagation.REQUIRED)
+    public Paper queryById(Long id) {
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        SysLog log = new SysLog();
+        log.setId(IDGenerator.nextId());
+        log.setMethod("queryById");
+        logService.addLog(log);
+        int d = 1/0;
+        return null;
+//        return paperDao.queryById(id);
+//        return testTransactional(id);
+
+    }
+//    @Transactional(propagation = Propagation.REQUIRED)
     public Paper testTransactional(Long id) {
         SysLog log = new SysLog();
         log.setId(IDGenerator.nextId());

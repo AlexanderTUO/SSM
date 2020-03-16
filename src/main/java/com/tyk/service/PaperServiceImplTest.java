@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/spring-*.xml"})
 public class PaperServiceImplTest {
@@ -17,6 +18,6 @@ public class PaperServiceImplTest {
     @Test
     public void queryById() {
         Paper paper = paperService.queryById(1L);
-        System.out.println(paper);
+        assertNotNull(paper);
     }
 }

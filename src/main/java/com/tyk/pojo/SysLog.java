@@ -15,5 +15,4 @@ public class SysLog {
     private String id;
     private Date createTime;
     private String method;
-
  }

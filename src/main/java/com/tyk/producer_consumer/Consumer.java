@@ -1,16 +1,16 @@
-package com.tyk.demo;
+package com.tyk.producer_consumer;
 
-public class Producer implements Runnable{
+public class Consumer implements Runnable{
     private Storage storage;
 
-    public Producer(Storage storage) {
+    public Consumer(Storage storage) {
         this.storage = storage;
     }
 
     @Override
     public void run() {
 //        while (true) {
-            storage.put();
+            storage.get();
 //        }
     }
 }

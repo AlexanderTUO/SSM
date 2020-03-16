@@ -30,10 +30,11 @@
         <property name="suffix" value=".jsp" />
     </bean>
     <bean class="com.tyk.pojo.Paper" init-method="customInit" destroy-method="customDestroy"/>
-    <bean class="com.tyk.controller.MyBeanPostProcessor"/>
+    <bean class="com.tyk.pojo.MyBeanPostProcessor"/>
 
 
 
     <!-- 4.扫描web相关的bean -->
-    <context:component-scan base-package="com.tyk.controller" />
+    <context:component-scan base-package="com.tyk.controller,com.tyk.util" />
+    <context:component-scan base-package="com.tyk.controller,com.tyk.util" />
 </beans>

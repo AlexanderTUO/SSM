@@ -1,4 +1,4 @@
-package com.tyk.demo.stringdemo;
+package com.tyk.producer_consumer.stringdemo;
 
 public class splitTest {
     public static void main(String[] args) {

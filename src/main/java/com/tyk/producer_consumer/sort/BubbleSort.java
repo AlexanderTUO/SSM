@@ -1,4 +1,4 @@
-package com.tyk.demo.sort;
+package com.tyk.producer_consumer.sort;
 
 public class BubbleSort {
     public static void main(String[] args) {

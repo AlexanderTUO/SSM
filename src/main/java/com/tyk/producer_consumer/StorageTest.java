@@ -1,6 +1,4 @@
-package com.tyk.demo;
-
-import java.util.stream.IntStream;
+package com.tyk.producer_consumer;
 
 public class StorageTest {
     public static void main(String[] args) {

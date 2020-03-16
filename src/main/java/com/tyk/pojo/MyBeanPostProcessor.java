@@ -1,4 +1,4 @@
-package com.tyk.controller;
+package com.tyk.pojo;
 
 import com.tyk.pojo.Paper;
 import org.springframework.beans.BeansException;

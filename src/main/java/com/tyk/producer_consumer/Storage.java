@@ -1,4 +1,4 @@
-package com.tyk.demo;
+package com.tyk.producer_consumer;
 
 import java.util.ArrayList;
 import java.util.List;

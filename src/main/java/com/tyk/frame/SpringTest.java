@@ -1,4 +1,4 @@
-package com.tyk.aop;
+package com.tyk.frame;
 
 import com.tyk.service.PaperService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

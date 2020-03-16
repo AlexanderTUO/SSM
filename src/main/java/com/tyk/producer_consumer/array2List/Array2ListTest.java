@@ -1,4 +1,4 @@
-package com.tyk.demo.array2List;
+package com.tyk.producer_consumer.array2List;
 
 import java.util.*;
 
