@@ -1,8 +1,7 @@
-package com.tyk.mode.proxy_mode.jdkdynamicproxy;
+package com.tyk.pattern.proxy_pattern.jdkdynamicproxy;
 
 import com.tyk.annotation.CustomTransactional;
 import com.tyk.util.TransactionalUtils;
-import org.springframework.transaction.TransactionStatus;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

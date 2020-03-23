@@ -1,6 +1,4 @@
-package com.tyk.mode.proxy_mode.cglibdynamicproxy;
-
-import com.tyk.annotation.CustomTransactional;
+package com.tyk.pattern.proxy_pattern.cglibdynamicproxy;
 
 public class HelloService {
     public HelloService() {

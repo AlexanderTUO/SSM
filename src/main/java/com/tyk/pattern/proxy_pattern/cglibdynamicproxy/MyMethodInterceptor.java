@@ -1,4 +1,4 @@
-package com.tyk.mode.proxy_mode.cglibdynamicproxy;
+package com.tyk.pattern.proxy_pattern.cglibdynamicproxy;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 

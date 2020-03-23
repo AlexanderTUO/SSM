@@ -1,4 +1,4 @@
-package com.tyk.mode.proxy_mode.cglibdynamicproxy;
+package com.tyk.pattern.proxy_pattern.cglibdynamicproxy;
 import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.cglib.proxy.Enhancer;
 

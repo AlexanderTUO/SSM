@@ -1,4 +1,4 @@
-package com.tyk.mode.proxy_mode.jdkdynamicproxy;
+package com.tyk.pattern.proxy_pattern.jdkdynamicproxy;
 
 public class Client {
     public static void main(String[] args) {

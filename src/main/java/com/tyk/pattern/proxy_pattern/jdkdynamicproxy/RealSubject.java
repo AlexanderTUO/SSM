@@ -1,7 +1,6 @@
-package com.tyk.mode.proxy_mode.jdkdynamicproxy;
+package com.tyk.pattern.proxy_pattern.jdkdynamicproxy;
 
 import com.tyk.annotation.CustomTransactional;
-import org.springframework.transaction.annotation.Transactional;
 
 public class RealSubject implements Subject{
     @Override
