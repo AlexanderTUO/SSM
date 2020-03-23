@@ -1,4 +1,4 @@
-package com.tyk.leecode;
+package com.tyk.leetcode;
 
 /**
  *

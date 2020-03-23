@@ -1,4 +1,4 @@
-package com.tyk.leecode;
+package com.tyk.leetcode;
 
 public class NumTest {
     public static void main(String[] args) {
