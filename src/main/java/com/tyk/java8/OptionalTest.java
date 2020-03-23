@@ -18,6 +18,10 @@ public class OptionalTest {
         // 为null的话报NullPointerException
         Optional<Integer> b = Optional.of(var2);
         System.out.println(test.sum(a,b));
+
+        String str = "testLength";
+//        String str = null;
+        System.out.println(Optional.ofNullable(str).map(String::length).orElse(0));
      }
 
     public Integer sum(Optional<Integer> a,Optional<Integer> b) {
