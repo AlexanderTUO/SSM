@@ -1,4 +1,4 @@
-package com.tyk.design_mode.strategy_mode;
+package com.tyk.pattern.strategy_mode;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import static org.junit.Assert.*;
