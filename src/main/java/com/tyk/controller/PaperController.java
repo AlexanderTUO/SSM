@@ -3,6 +3,7 @@ package com.tyk.controller;
 import com.tyk.pojo.Paper;
 import com.tyk.service.MessageProducer2;
 import com.tyk.service.PaperService;
+import com.tyk.util.IDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +48,7 @@ public class PaperController {
     @RequestMapping("toUpdatePaper")
     public String toUpdatePaper(Model model, Long id) {
         model.addAttribute("paper", paperService.queryById(id));
-        messageProducer2.onSendMessage("32423,updatePaper");
+        messageProducer2.onSendMessage(IDGenerator.nextId()+",updatePaper");
         return "updatePaper";
     }
 

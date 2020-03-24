@@ -46,9 +46,9 @@ public class PaperServiceImpl implements PaperService {
         log.setId(IDGenerator.nextId());
         log.setMethod("queryById");
         logService.addLog(log);
-        int d = 1/0;
-        return null;
-//        return paperDao.queryById(id);
+//        int d = 1/0;
+//        return null;
+        return paperDao.queryById(id);
 //        return testTransactional(id);
 
     }
