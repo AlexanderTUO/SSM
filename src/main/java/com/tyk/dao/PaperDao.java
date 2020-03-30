@@ -13,5 +13,7 @@ public interface PaperDao {
 
     Paper queryById(Long id);
 
+    Paper queryByIdWithLock(Long id);
+
     List<Paper> queryAllPaper();
 }

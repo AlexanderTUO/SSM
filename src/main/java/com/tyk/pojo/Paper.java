@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Paper implements BeanNameAware, BeanFactoryAware, ApplicationContextAware ,InitializingBean, DisposableBean, Serializable {
     private long paperId;
     private String paperName;
-    private int paperNum;
+    private Integer paperNum;
     private String paperDetail;
 
     @Override

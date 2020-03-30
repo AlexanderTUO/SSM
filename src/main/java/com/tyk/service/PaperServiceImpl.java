@@ -5,6 +5,9 @@ import com.tyk.dao.PaperDao;
 import com.tyk.pojo.Paper;
 import com.tyk.pojo.SysLog;
 import com.tyk.util.IDGenerator;
+import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -13,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 @Service
 public class PaperServiceImpl implements PaperService {
+
+    private static Logger logger = LoggerFactory.getLogger(PaperServiceImpl.class);
     @Autowired
     private PaperDao paperDao;
 
@@ -21,6 +26,8 @@ public class PaperServiceImpl implements PaperService {
 
     @Autowired
     private PaperService paperService;
+
+
 
     @Override
     public int addPaper(Paper paper) {
@@ -52,7 +59,13 @@ public class PaperServiceImpl implements PaperService {
 //        return testTransactional(id);
 
     }
-//    @Transactional(propagation = Propagation.REQUIRED)
+
+    @Override
+    public Paper queryByIdWithLock(Long id) {
+        return paperDao.queryByIdWithLock(id);
+    }
+
+    //    @Transactional(propagation = Propagation.REQUIRED)
     public Paper testTransactional(Long id) {
         SysLog log = new SysLog();
         log.setId(IDGenerator.nextId());
@@ -62,7 +75,15 @@ public class PaperServiceImpl implements PaperService {
         return paperDao.queryById(id);
     }
 
-
+    @Override
+    @Transactional(rollbackFor = RuntimeException.class)
+    public void increasePaperNumWithLock(long id) {
+        Paper paper = paperDao.queryByIdWithLock(id);
+        final Integer oldNum = paper.getPaperNum();
+        logger.info("oldNum:{}",oldNum);
+        paper.setPaperNum(oldNum+1);
+        paperDao.updatePaper(paper);
+    }
 
 
     @Override

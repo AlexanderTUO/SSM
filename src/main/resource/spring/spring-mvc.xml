@@ -35,5 +35,5 @@
 
 
     <!-- 4.扫描web相关的bean -->
-    <context:component-scan base-package="com.tyk.controller,com.tyk.util" />
+    <context:component-scan base-package="com.tyk.controller,com.tyk.util,com.tyk.locker" />
 </beans>

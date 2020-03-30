@@ -15,10 +15,19 @@ public interface PaperService {
 //    @CustomTransactional(id = 1,propagation = "REQUIRED")
     Paper queryById(Long id);
 
+    /**
+     * 添加悲观锁
+     * @param id
+     * @return
+     */
+    Paper queryByIdWithLock(Long id);
+
     List<Paper> queryAllPaper();
 
     String getMessage(String username);
 
 //    @CustomTransactional(id = 1,propagation = "REQUIRED")
     Paper testTransactional(Long id);
+
+    void increasePaperNumWithLock(long id);
 }

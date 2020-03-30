@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tyk.dao.PaperDao">
-    <cache type="com.tyk.config.RedisCache"></cache>
+<!--    <cache type="com.tyk.config.RedisCache"></cache>-->
     <resultMap type="com.tyk.pojo.Paper" id="paperResultMap" >
         <id property="paperId" column="paper_id"/>
         <result property="paperName" column="name"/>
@@ -28,6 +28,11 @@
         SELECT paper_id,name,number,detail
         FROM paper
         WHERE paper_id=#{paperId}
+    </select>
+    <select id="queryByIdWithLock" resultMap="paperResultMap" parameterType="long" useCache="true">
+        SELECT paper_id,name,number,detail
+        FROM paper
+        WHERE paper_id=#{paperId} for update
     </select>
     <select id="queryAllPaper" resultMap="paperResultMap">
         SELECT paper_id,name,number,detail
